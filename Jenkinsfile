@@ -4,7 +4,7 @@ node {
     }
     
     stage('SonarQube analysis') {
-      withSonarQubeEnv(credentialsId: 'sonar-qube-admin', installationName: 'Local SonarQube') {
+      withSonarQubeEnv(installationName: 'Local SonarQube') {
         sh './gradlew sonarqube'
       }
     }

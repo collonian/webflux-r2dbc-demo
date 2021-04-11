@@ -10,7 +10,7 @@ COPY gradlew build.gradle settings.gradle ./
 RUN chmod +x gradlew
 RUN ./gradlew build || return 0 
 
-COPY ./src ./src
+COPY ./src .
 RUN ./gradlew build
 
 

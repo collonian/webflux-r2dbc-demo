@@ -1,6 +1,6 @@
 #build stage
 #FROM gradle:jdk-alpine as build-stage
-FROM java:jre-alpine as build-stage
+FROM openjdk:11-jdk as build-stage
 
 WORKDIR /home/gradle/project
 
@@ -12,7 +12,7 @@ RUN chmod +x gradlew
 RUN ./gradlew build
 
 #production stage
-FROM java:jre-alpine
+FROM openjdk:11-jre
 
 WORKDIR /home/gradle/project
 

@@ -4,8 +4,10 @@ pipeline {
     }
     stages {
         stage('Dockerbuild') {
-            checkout scm
-            app = docker.build('webflux-r2dbc-demo:$GIT_COMMIT_HASH')
+            steps {
+                checkout scm
+                app = docker.build('webflux-r2dbc-demo:$GIT_COMMIT_HASH')
+            }
         }
     }
 }

@@ -1,2 +1,3 @@
 rootProject.name = 'webflux-r2dbc-demo'
 
+systemProp.sonar.host.url = http://localhost:9000

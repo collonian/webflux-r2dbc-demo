@@ -1,6 +1,6 @@
 node {
     script {
-                GIT_COMMIT_HASH = sh "(git log -n 1 --pretty=format:'%H')"
+                GIT_COMMIT_HASH = sh "(git log -1 --pretty=format:%h)"
 
                 echo "**************************************************"
                 echo "${GIT_COMMIT_HASH}"

@@ -19,7 +19,7 @@ repositories {
 }
 
 bootJar {
-    # "$baseName-0.0.1-SNAPSHOT.$extension"
+    // "$baseName-0.0.1-SNAPSHOT.$extension"
     archiveName = "$baseName.$extension"
 }
 

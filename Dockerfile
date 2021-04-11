@@ -6,9 +6,9 @@ WORKDIR /home/gradle/project
 
 ENV GRADLE_USER_HOME /home/gradle/project
 
-COPY gradlew build.gradle settings.gradle ./
 COPY ./gradle ./gradle
-RUN chmod +x gradlew && ./gradlew build
+COPY gradlew build.gradle settings.gradle ./
+RUN chmod +x gradlew && ./gradlew build || return 0
 
 COPY ./src ./src
 RUN ./gradlew build

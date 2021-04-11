@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Dockerbuild') {
       steps {
-        docker.build('webflux-r2dbc-demo:${env.BUILD-ID}")
+        docker.build('webflux-r2dbc-demo:${env.BUILD-ID}')
       }
     }
     stage('Build') {

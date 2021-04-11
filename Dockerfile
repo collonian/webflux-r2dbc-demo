@@ -8,7 +8,7 @@ ENV GRADLE_USER_HOME /home/gradle/project
 
 COPY gradlew build.gradle settings.gradle ./
 RUN chmod +x gradlew
-RUN ./gradlew --offline
+RUN ./gradlew build || return 0 
 
 COPY src src
 RUN ./gradlew build

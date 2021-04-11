@@ -6,11 +6,12 @@ WORKDIR /home/gradle/project
 
 ENV GRADLE_USER_HOME /home/gradle/project
 
-COPY ./gradle gradlew build.gradle settings.gradle ./
+COPY gradlew build.gradle settings.gradle ./
+COPY ./gradle ./gradle
 RUN chmod +x gradlew && ./gradlew build
 
 COPY ./src ./src
-RUN chmod +x gradlew && ./gradlew build
+RUN ./gradlew build
 
 
 #production stage

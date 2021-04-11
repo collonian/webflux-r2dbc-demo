@@ -5,7 +5,7 @@ pipeline {
     stage('Dockerbuild') {
       steps {
         checkout scm
-        docker.build('webflux-r2dbc-demo:${env.BUILD_ID}')
+        app = docker.build('webflux-r2dbc-demo:${env.BUILD_ID}')
       }
     }
   }

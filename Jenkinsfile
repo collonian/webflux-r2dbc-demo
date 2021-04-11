@@ -1,14 +1,11 @@
 pipeline {
   agent any
   
-  node {
-    checkout scm
-  }
-  
   stages {
     stage('Build') {
       steps {
         echo 'Building...'
+        sh 'gradle build'
       }
     }
     stage('Test') {

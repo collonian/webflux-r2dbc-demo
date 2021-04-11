@@ -21,6 +21,6 @@ WORKDIR /home/gradle/project
 
 EXPOSE 8080
 
-COPY --from=build-stage /home/gradle/project/build/libs/webflux-r2dbc-demo-1.0-SNAPSHOT.jar .
+COPY --from=build-stage /home/gradle/project/build/libs/webflux-r2dbc-demo.jar .
 
-ENTRYPOINT java $JAVA_OPTS -jar webflux-r2dbc-demo-1.0-SNAPSHOT.jar
+ENTRYPOINT java $JAVA_OPTS -jar webflux-r2dbc-demo.jar

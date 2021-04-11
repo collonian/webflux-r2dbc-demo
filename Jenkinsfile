@@ -1,13 +1,9 @@
-pipeline {
-    environment {
-        GIT_COMMIT_HASH = sh "(git log -1 --pretty=format:%h)"
+node {
+    stage('Checkout') {
+        checkout scm
     }
-    stages {
-        stage('Dockerbuild') {
-            steps {
-                checkout scm
-                app = docker.build('webflux-r2dbc-demo:$GIT_COMMIT_HASH')
-            }
-        }
+    stage('Build image') {
+        GIT_COMMIT_HASH = sh "(git log -1 --pretty=format:%h)"
+        app = docker.build('webflux-r2dbc-demo:$GIT_COMMIT_HASH')
     }
 }

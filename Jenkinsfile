@@ -2,10 +2,13 @@ pipeline {
   agent any
   
   stages {
+    stage('Checkout') {
+      checkout scm
+    }
     stage('Build') {
       steps {
         echo 'Building...'
-        sh 'gradle build'
+        sh 'gradle clean build'
       }
     }
     stage('Test') {

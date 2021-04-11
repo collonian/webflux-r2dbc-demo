@@ -1,5 +1,6 @@
 #build stage
-FROM gradle:jdk-alpine as build-stage
+#FROM gradle:jdk-alpine as build-stage
+FROM gradle:6.8.3-jdk11 as build-stage
 
 WORKDIR /home/gradle/project
 

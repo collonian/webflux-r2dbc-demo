@@ -11,6 +11,7 @@ ENV GRADLE_USER_HOME /home/gradle/project
 
 COPY . /home/gradle/project
 
+RUN chmod +x gradlew
 RUN ./gradlew build
 
 #production stage

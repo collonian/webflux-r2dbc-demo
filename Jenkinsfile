@@ -2,6 +2,12 @@ node {
     stage('Checkout') {
         checkout scm
     }
+    
+    stage('SonarQube analysis') {
+      withSonarQubeEnv(credentialsId: 'f225455e-ea59-40fa-8af7-08176e86507a', installationName: 'My SonarQube Server') {
+        sh './gradlew sonarqube'
+      }
+    }
     stage('Build image') {
         def GIT_COMMIT_HASH = sh "(git log -1 --pretty=format:%h)"
         app = docker.build("webflux-r2dbc-demo:${GIT_COMMIT_HASH}")
